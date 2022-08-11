@@ -28,8 +28,10 @@ namespace sqlite {
 #define SQLITE_MODERN_CPP_ERROR_CODE(NAME,name,derived) \
 		class name: public sqlite_exception { using sqlite_exception::sqlite_exception; };\
 		derived
+
 #define SQLITE_MODERN_CPP_ERROR_CODE_EXTENDED(BASE,SUB,base,sub) \
 		class base ## _ ## sub: public base { using base::base; };
+
 #include "lists/error_codes.h"
 #undef SQLITE_MODERN_CPP_ERROR_CODE_EXTENDED
 #undef SQLITE_MODERN_CPP_ERROR_CODE
